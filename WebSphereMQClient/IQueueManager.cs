@@ -3,48 +3,48 @@ namespace WebSphereMQClient
     using System;
 
     /// <summary>
-    /// Интерфейс менеджера очередей
+    /// В»РЅС‚РµСЂС„РµР№СЃ РјРµРЅРµРґР¶РµСЂР° РѕС‡РµСЂРµРґРµР№
     /// </summary>
     /// <author>a.trofimov</author>
     public interface IQueueManager : IDisposable
     {
         /// <summary>
-        /// Параметры соединения
+        /// С•Р°СЂР°РјРµС‚СЂС‹ СЃРѕРµРґРёРЅРµРЅРёВ¤
         /// </summary>
         QueueManagerConnection Connection { get; set; }
         
         /// <summary>
-        /// Устанавливает соединение с менеджером очередей
+        /// вЂќСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЃРѕРµРґРёРЅРµРЅРёРµ СЃ РјРµРЅРµРґР¶РµСЂРѕРј РѕС‡РµСЂРµРґРµР№
         /// </summary>
         void Connect();
 
         /// <summary>
-        /// Открывает очередь
+        /// СњС‚РєСЂС‹РІР°РµС‚ РѕС‡РµСЂРµРґСЊ
         /// </summary>
-        /// <typeparam name="T">Тип очереди</typeparam>
-        /// <param name="queueName">Имя очереди</param>
-        /// <param name="openOptions">Параметры очереди</param>
-        /// <returns>Открытая очередь</returns>
+        /// <typeparam name="T">вЂњРёРї РѕС‡РµСЂРµРґРё</typeparam>
+        /// <param name="queueName">В»РјВ¤ РѕС‡РµСЂРµРґРё</param>
+        /// <param name="openOptions">С•Р°СЂР°РјРµС‚СЂС‹ РѕС‡РµСЂРµРґРё</param>
+        /// <returns>СњС‚РєСЂС‹С‚Р°В¤ РѕС‡РµСЂРµРґСЊ</returns>
         T OpenQueue<T>(string queueName, int openOptions) where T : IQueue;
 
         /// <summary>
-        /// Открывает очередь на чтение
+        /// СњС‚РєСЂС‹РІР°РµС‚ РѕС‡РµСЂРµРґСЊ РЅР° С‡С‚РµРЅРёРµ
         /// </summary>
-        /// <typeparam name="T">Тип очереди</typeparam>
-        /// <param name="queueName">Имя очереди</param>
-        /// <returns>Открытая очередь</returns>
+        /// <typeparam name="T">вЂњРёРї РѕС‡РµСЂРµРґРё</typeparam>
+        /// <param name="queueName">В»РјВ¤ РѕС‡РµСЂРµРґРё</param>
+        /// <returns>СњС‚РєСЂС‹С‚Р°В¤ РѕС‡РµСЂРµРґСЊ</returns>
         T OpenQueueForGet<T>(string queueName) where T : IQueue;
 
         /// <summary>
-        /// Открывает очередь на запись
+        /// СњС‚РєСЂС‹РІР°РµС‚ РѕС‡РµСЂРµРґСЊ РЅР° Р·Р°РїРёСЃСЊ
         /// </summary>
-        /// <typeparam name="T">Тип очереди</typeparam>
-        /// <param name="queueName">Имя очереди</param>
-        /// <returns>Открытая очередь</returns>
+        /// <typeparam name="T">вЂњРёРї РѕС‡РµСЂРµРґРё</typeparam>
+        /// <param name="queueName">В»РјВ¤ РѕС‡РµСЂРµРґРё</param>
+        /// <returns>СњС‚РєСЂС‹С‚Р°В¤ РѕС‡РµСЂРµРґСЊ</returns>
         T OpenQueueForPut<T>(string queueName) where T : IQueue;
 
         /// <summary>
-        /// Отключается от менеджера очередей
+        /// СњС‚РєР»СЋС‡Р°РµС‚СЃВ¤ РѕС‚ РјРµРЅРµРґР¶РµСЂР° РѕС‡РµСЂРµРґРµР№
         /// </summary>
         void Disconnect();
     }

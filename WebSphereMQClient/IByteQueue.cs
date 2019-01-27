@@ -1,4 +1,4 @@
-﻿namespace WebSphereMQClient
+namespace WebSphereMQClient
 {
     using System.Collections.Generic;
 

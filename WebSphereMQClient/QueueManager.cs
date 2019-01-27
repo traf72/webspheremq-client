@@ -1,4 +1,4 @@
-﻿namespace WebSphereMQClient
+namespace WebSphereMQClient
 {
     using IBM.WMQ;
     using System;

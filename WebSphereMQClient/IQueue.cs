@@ -5,38 +5,38 @@ namespace WebSphereMQClient
     using System.Collections.Generic;
 
     /// <summary>
-    /// Интерфейс очереди
+    /// РРЅС‚РµСЂС„РµР№СЃ РѕС‡РµСЂРµРґРё
     /// </summary>
     /// <author>a.trofimov</author>
     public interface IQueue : IDisposable
     {
         /// <summary>
-        /// Считывает все сообщения
+        /// РЎС‡РёС‚С‹РІР°РµС‚ РІСЃРµ СЃРѕРѕР±С‰РµРЅРёСЏ
         /// </summary>
         IEnumerable<MQMessage> GetAllMessages();
 
         /// <summary>
-        /// Считывает одно сообщение
+        /// РЎС‡РёС‚С‹РІР°РµС‚ РѕРґРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ
         /// </summary>
         MQMessage GetMessage();
 
         /// <summary>
-        /// Помещает сообщение в очередь
+        /// РџРѕРјРµС‰Р°РµС‚ СЃРѕРѕР±С‰РµРЅРёРµ РІ РѕС‡РµСЂРµРґСЊ
         /// </summary>
         void PutMessage(MQMessage message, IEnumerable<KeyValuePair<string, string>> stringProperties = null);
 
         /// <summary>
-        /// Возвращает текушую длину очереди
+        /// Р’РѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСѓС€СѓСЋ РґР»РёРЅСѓ РѕС‡РµСЂРµРґРё
         /// </summary>
         int CurrentLength { get; }
 
         /// <summary>
-        /// Закрывает очередь
+        /// Р—Р°РєСЂС‹РІР°РµС‚ РѕС‡РµСЂРµРґСЊ
         /// </summary>
         void Close();
 
         /// <summary>
-        /// Получает следующее сообщение, но не удаляет его из очереди
+        /// РџРѕР»СѓС‡Р°РµС‚ СЃР»РµРґСѓСЋС‰РµРµ СЃРѕРѕР±С‰РµРЅРёРµ, РЅРѕ РЅРµ СѓРґР°Р»СЏРµС‚ РµРіРѕ РёР· РѕС‡РµСЂРµРґРё
         /// </summary>
         MQMessage BrowseNextMessage(bool resetToFirstMessage = false);
     }
