@@ -26,7 +26,7 @@ namespace WebSphereMQClient
         void PutMessage(MQMessage message, IEnumerable<KeyValuePair<string, string>> stringProperties = null);
 
         /// <summary>
-        /// Возвращает текушую длину очереди
+        /// Возвращает текущую длину очереди
         /// </summary>
         int CurrentLength { get; }
 
